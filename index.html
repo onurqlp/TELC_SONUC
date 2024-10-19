@@ -107,6 +107,16 @@
     </style>
 </head>
 <body>
+    <script>
+        // Kullanıcıdan şifre isteme
+        const password = prompt("Lütfen şifreyi girin:");
+
+        if (password !== "122") {
+            alert("Yanlış şifre! Sayfaya erişim reddedildi.");
+            window.location.href = "https://www.google.com"; // Yanlış şifre girildiğinde yönlendirme yapılacak bir sayfa
+        }
+    </script>
+
     <div class="container">
         <h1>Sınav Tarihini Seçin ve Sonuçları Görüntüleyin</h1>
         <select id="dateSelect">
