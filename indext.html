@@ -3,25 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XML Sınav Sonuçları Yükleme ve Görüntüleme</title>
+    <title>XML to HTML Viewer</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
         table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
-            overflow-x: auto;
         }
         table, th, td {
             border: 1px solid black;
@@ -36,78 +23,51 @@
         .copy-button {
             margin-top: 20px;
         }
-        @media screen and (max-width: 768px) {
-            table, th, td {
-                font-size: 12px;
-                padding: 6px;
-            }
-            th, td {
-                white-space: nowrap;
-            }
-        }
-        @media screen and (max-width: 480px) {
-            h1, h2 {
-                font-size: 1.2em;
-            }
-            input[type="file"], select {
-                width: 100%;
-            }
-            .copy-button {
-                font-size: 0.9em;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>XML Dosyası Yükle ve Sınav Sonuçlarını Görüntüle</h1>
-        <input type="file" id="fileInput" accept=".xml" multiple>
-        <h2>Sınav Tarihini Seçin</h2>
-        <select id="dateSelect">
-            <option value="">Bir sınav tarihi seçin</option>
-        </select>
-        <h2 id="examTitle">TARİHİNDEKİ SINAV SONUÇLARI</h2>
-        <table id="resultTable">
-            <thead>
-                <tr>
-                    <th>Ad</th>
-                    <th>Soyad</th>
-                    <th>Teilnehmernummer / Katılımcı Numarası</th>
-                    <th>Leseverstehen (Okuma Anlama)</th>
-                    <th>Sprachbausteine (Dil Bilgisi)</th>
-                    <th>Hörverstehen (Dinleme Anlama)</th>
-                    <th>Schriftlicher Ausdruck (Yazılı İfade)</th>
-                    <th>Teil1_muendlich (Sözlü Sınav 1. Kısım)</th>
-                    <th>Teil2_muendlich (Sözlü Sınav 2. Kısım)</th>
-                    <th>Teil3_muendlich (Sözlü Sınav 3. Kısım)</th>
-                    <th>Gesamtergebnis Teil 1 Sonuç (Dijital) min 135 puan</th>
-                    <th>Gesamtergebnis_muendlich Sonuç (Sözlü) min. 45 Puan</th>
-                    <th>Gesamtergebnis (Sınav Sonucu)</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+    <h1>XML Dosyası Yükle</h1>
+    <input type="file" id="fileInput" accept=".xml">
+    <h2 id="examTitle">TARİHİNDEKİ SINAV SONUÇLARI</h2>
+    <table id="resultTable">
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Teilnehmernummer / Katılımcı Numarası</th>
+                <th>Leseverstehen (Okuma Anlama)</th>
+                <th>Sprachbausteine (Dil Bilgisi)</th>
+                <th>Hörverstehen (Dinleme Anlama)</th>
+                <th>Schriftlicher Ausdruck (Yazılı İfade)</th>
+                <th>Teil1_muendlich (Sözlü Sınav 1. Kısım)</th>
+                <th>Teil2_muendlich (Sözlü Sınav 2. Kısım)</th>
+                <th>Teil3_muendlich (Sözlü Sınav 3. Kısım)</th>
+                <th>Gesamtergebnis Teil 1 Sonuç (Dijital) min 135 puan</th>
+                <th>Gesamtergebnis_muendlich Sonuç (Sözlü) min. 45 Puan</th>
+                <th>Gesamtergebnis (Sınav Sonucu)</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 
-        <h2>Kısa Liste</h2>
-        <table id="shortListTable">
-            <thead>
-                <tr>
-                    <th>Ad</th>
-                    <th>Soyad</th>
-                    <th>Dijital</th>
-                    <th>Sözlü</th>
-                    <th>Mesaj Kopyala</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </div>
+    <h2>Kısa Liste</h2>
+    <table id="shortListTable">
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Dijital</th>
+                <th>Sözlü</th>
+                <th>Mesaj Kopyala</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 
     <script>
-        const examData = {};
         document.getElementById('fileInput').addEventListener('change', function(event) {
-            const files = event.target.files;
-            for (let file of files) {
+            const file = event.target.files[0];
+            if (file) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
                     const parser = new DOMParser();
@@ -117,34 +77,16 @@
                     // Extract exam date
                     const examDate = xmlDoc.getElementsByTagName("Pruefungsdatum")[0]?.textContent || "-";
                     if (examDate !== "-") {
-                        if (!examData[examDate]) {
-                            examData[examDate] = [];
-                            const option = document.createElement("option");
-                            option.value = examDate;
-                            const date = new Date(examDate);
-                            option.textContent = `${date.getDate()} ${date.toLocaleString('tr-TR', { month: 'long' })} ${date.getFullYear()}`;
-                            document.getElementById("dateSelect").appendChild(option);
-                        }
-                        examData[examDate].push(tables);
+                        const date = new Date(examDate);
+                        const formattedDate = `${date.getDate()} ${date.toLocaleString('tr-TR', { month: 'long' })} ${date.getFullYear()}`;
+                        document.getElementById("examTitle").textContent = `${formattedDate.toUpperCase()} TARİHİNDEKİ SINAV SONUÇLARI`;
                     }
-                };
-                reader.readAsText(file);
-            }
-        });
 
-        document.getElementById('dateSelect').addEventListener('change', function(event) {
-            const selectedDate = event.target.value;
-            if (selectedDate && examData[selectedDate]) {
-                const resultTableBody = document.querySelector("#resultTable tbody");
-                const shortListTableBody = document.querySelector("#shortListTable tbody");
-                resultTableBody.innerHTML = ""; // Clear previous content
-                shortListTableBody.innerHTML = "";
+                    const resultTableBody = document.querySelector("#resultTable tbody");
+                    const shortListTableBody = document.querySelector("#shortListTable tbody");
+                    resultTableBody.innerHTML = ""; // Clear previous content
+                    shortListTableBody.innerHTML = "";
 
-                const date = new Date(selectedDate);
-                const formattedDate = `${date.getDate()} ${date.toLocaleString('tr-TR', { month: 'long' })} ${date.getFullYear()}`;
-                document.getElementById("examTitle").textContent = `${formattedDate.toUpperCase()} TARİHİNDEKİ SINAV SONUÇLARI`;
-
-                for (let tables of examData[selectedDate]) {
                     for (let i = 0; i < tables.length; i++) {
                         const row = document.createElement("tr");
                         const columns = [
@@ -191,7 +133,8 @@
 
                         shortListTableBody.appendChild(shortRow);
                     }
-                }
+                };
+                reader.readAsText(file);
             }
         });
     </script>
