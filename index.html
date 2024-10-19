@@ -103,6 +103,7 @@
 
     <script>
         const baseUrl = 'https://raw.githubusercontent.com/onurqlp/TELC_SONUC/main/';
+        const uniqueDates = new Set(); // Aynı tarihleri takip etmek için Set kullanıyoruz
 
         // GitHub'daki XML dosyalarının bulunduğu repository URL'si ile dosyaları listeleme
         fetch('https://api.github.com/repos/onurqlp/TELC_SONUC/contents/')
@@ -119,7 +120,8 @@
 
                                 // XML dosyasından sınav tarihini al
                                 const examDate = xmlDoc.getElementsByTagName("Pruefungsdatum")[0]?.textContent || "-";
-                                if (examDate !== "-") {
+                                if (examDate !== "-" && !uniqueDates.has(examDate)) {
+                                    uniqueDates.add(examDate);
                                     const date = new Date(examDate);
                                     const formattedDate = `${date.getDate()} ${date.toLocaleString('tr-TR', { month: 'long' })} ${date.getFullYear()}`;
 
