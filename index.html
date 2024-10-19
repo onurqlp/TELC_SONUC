@@ -5,37 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XML Sınav Sonuçları Görüntüleme</title>
     <style>
+        /* Genel gövde ve düzen */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            background-color: #f1f5f9; /* Zoom ve Facebook'un açık arka plan tonları */
+            color: #0b5394; /* Zoom mavisine yakın koyu mavi */
         }
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
+        h1, h2 {
+            text-align: center;
+            color: #0b5394; /* Zoom mavisi */
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #0b5394;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
             overflow-x: auto;
         }
+
         table, th, td {
-            border: 1px solid black;
+            border: 1px solid #0b5394; /* Mavi tonlar */
         }
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
+
         th {
-            background-color: #f2f2f2;
+            background-color: #3b5998; /* Facebook mavisi */
+            color: white;
+            padding: 10px;
         }
+
+        td {
+            padding: 10px;
+            text-align: left;
+            background-color: #ffffff;
+        }
+
         .copy-button {
             margin-top: 20px;
+            padding: 8px 12px;
+            background-color: #e91e63; /* TAC Kızılay kırmızısına benzer ton */
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
+
+        .copy-button:hover {
+            background-color: #d81b60;
+        }
+
         @media screen and (max-width: 768px) {
             table, th, td {
                 font-size: 12px;
@@ -45,15 +84,24 @@
                 white-space: nowrap;
             }
         }
+
         @media screen and (max-width: 480px) {
             h1, h2 {
                 font-size: 1.2em;
             }
+
             select {
                 width: 100%;
+                font-size: 0.9em;
             }
+
             .copy-button {
                 font-size: 0.9em;
+                padding: 6px 10px;
+            }
+
+            .container {
+                padding: 15px;
             }
         }
     </style>
