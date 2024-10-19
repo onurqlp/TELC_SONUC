@@ -1,0 +1,40 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:Locale="de-DE">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Stapel" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="Vorname" type="xs:string" minOccurs="0" />
+                <xs:element name="Geburtsort" type="xs:string" minOccurs="0" />
+                <xs:element name="Bogennummer" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil1_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil2_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil3_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil4_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="BewertSchriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil1_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil2_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil3_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil4_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil5_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="BewertMuendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Gesamtergebnis_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Gesamtergebnis_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Gesamtergebnis" type="xs:string" minOccurs="0" />
+                <xs:element name="Note" type="xs:string" minOccurs="0" />
+                <xs:element name="Geburtsdatum" type="xs:string" minOccurs="0" />
+                <xs:element name="Pruefungsdatum" type="xs:dateTime" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Table><Stapel>0</Stapel><Name>AKAT</Name><Vorname>ESER DENİZ </Vorname><Geburtsort>AKPINAR</Geburtsort><Bogennummer>D163759</Bogennummer><Teil1_schriftlich></Teil1_schriftlich><Teil2_schriftlich></Teil2_schriftlich><Teil3_schriftlich></Teil3_schriftlich><Teil4_schriftlich></Teil4_schriftlich><BewertSchriftlich></BewertSchriftlich><Teil1_muendlich></Teil1_muendlich><Teil2_muendlich></Teil2_muendlich><Teil3_muendlich></Teil3_muendlich><Teil4_muendlich></Teil4_muendlich><Teil5_muendlich></Teil5_muendlich><BewertMuendlich></BewertMuendlich><Gesamtergebnis_schriftlich></Gesamtergebnis_schriftlich><Gesamtergebnis_muendlich></Gesamtergebnis_muendlich><Gesamtergebnis></Gesamtergebnis><Note></Note><Geburtsdatum>2002-12-24 00:00:00</Geburtsdatum><Pruefungsdatum>2024-08-15T07:00:00+00:00</Pruefungsdatum></Table><Table><Stapel>0</Stapel><Name>YALÇIN</Name><Vorname>IRMAK</Vorname><Geburtsort>KAZAN</Geburtsort><Bogennummer>D163760</Bogennummer><Teil1_schriftlich>0.00</Teil1_schriftlich><Teil2_schriftlich>0.00</Teil2_schriftlich><Teil3_schriftlich>0.00</Teil3_schriftlich><Teil4_schriftlich>0.00</Teil4_schriftlich><BewertSchriftlich></BewertSchriftlich><Teil1_muendlich>0.00</Teil1_muendlich><Teil2_muendlich>0.00</Teil2_muendlich><Teil3_muendlich>0.00</Teil3_muendlich><Teil4_muendlich>0.00</Teil4_muendlich><Teil5_muendlich>0.00</Teil5_muendlich><BewertMuendlich></BewertMuendlich><Gesamtergebnis_schriftlich>2</Gesamtergebnis_schriftlich><Gesamtergebnis_muendlich>12.5</Gesamtergebnis_muendlich><Gesamtergebnis>34.5</Gesamtergebnis><Note>F</Note><Geburtsdatum>2005-04-01 00:00:00</Geburtsdatum><Pruefungsdatum>2024-08-15T07:00:00+00:00</Pruefungsdatum></Table><Table><Stapel>0</Stapel><Name>KÜN</Name><Vorname>AZRA YAĞMUR </Vorname><Geburtsort>MERSİN</Geburtsort><Bogennummer>D163757</Bogennummer><Teil1_schriftlich>0.00</Teil1_schriftlich><Teil2_schriftlich>0.00</Teil2_schriftlich><Teil3_schriftlich>0.00</Teil3_schriftlich><Teil4_schriftlich>0.00</Teil4_schriftlich><BewertSchriftlich></BewertSchriftlich><Teil1_muendlich>0.00</Teil1_muendlich><Teil2_muendlich>0.00</Teil2_muendlich><Teil3_muendlich>0.00</Teil3_muendlich><Teil4_muendlich>0.00</Teil4_muendlich><Teil5_muendlich>0.00</Teil5_muendlich><BewertMuendlich></BewertMuendlich><Gesamtergebnis_schriftlich>12</Gesamtergebnis_schriftlich><Gesamtergebnis_muendlich>14.5</Gesamtergebnis_muendlich><Gesamtergebnis>51.5</Gesamtergebnis><Note>2</Note><Geburtsdatum>1998-01-27 00:00:00</Geburtsdatum><Pruefungsdatum>2024-08-15T07:00:00+00:00</Pruefungsdatum></Table><Table><Stapel>0</Stapel><Name>KONUKÇU </Name><Vorname>CEREN</Vorname><Geburtsort>ALTINDAĞ</Geburtsort><Bogennummer>D163758</Bogennummer><Teil1_schriftlich>0.00</Teil1_schriftlich><Teil2_schriftlich>0.00</Teil2_schriftlich><Teil3_schriftlich>0.00</Teil3_schriftlich><Teil4_schriftlich>0.00</Teil4_schriftlich><BewertSchriftlich></BewertSchriftlich><Teil1_muendlich>0.00</Teil1_muendlich><Teil2_muendlich>0.00</Teil2_muendlich><Teil3_muendlich>0.00</Teil3_muendlich><Teil4_muendlich>0.00</Teil4_muendlich><Teil5_muendlich>0.00</Teil5_muendlich><BewertMuendlich></BewertMuendlich><Gesamtergebnis_schriftlich>12</Gesamtergebnis_schriftlich><Gesamtergebnis_muendlich>11.5</Gesamtergebnis_muendlich><Gesamtergebnis>38.5</Gesamtergebnis><Note>4</Note><Geburtsdatum>1997-01-01 00:00:00</Geburtsdatum><Pruefungsdatum>2024-08-15T07:00:00+00:00</Pruefungsdatum></Table><Table><Stapel>0</Stapel><Name>KALE</Name><Vorname>KÖKSAL </Vorname><Geburtsort>AKDENİZ/MERSİN</Geburtsort><Bogennummer>D163761</Bogennummer><Teil1_schriftlich>0.00</Teil1_schriftlich><Teil2_schriftlich>0.00</Teil2_schriftlich><Teil3_schriftlich>0.00</Teil3_schriftlich><Teil4_schriftlich>0.00</Teil4_schriftlich><BewertSchriftlich></BewertSchriftlich><Teil1_muendlich>0.00</Teil1_muendlich><Teil2_muendlich>0.00</Teil2_muendlich><Teil3_muendlich>0.00</Teil3_muendlich><Teil4_muendlich>0.00</Teil4_muendlich><Teil5_muendlich>0.00</Teil5_muendlich><BewertMuendlich></BewertMuendlich><Gesamtergebnis_schriftlich>10</Gesamtergebnis_schriftlich><Gesamtergebnis_muendlich>13</Gesamtergebnis_muendlich><Gesamtergebnis>46</Gesamtergebnis><Note>3</Note><Geburtsdatum>1984-01-01 00:00:00</Geburtsdatum><Pruefungsdatum>2024-08-15T07:00:00+00:00</Pruefungsdatum></Table>
+</NewDataSet>

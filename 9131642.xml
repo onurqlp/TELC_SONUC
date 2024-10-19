@@ -1,0 +1,40 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:Locale="de-DE">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Stapel" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="Vorname" type="xs:string" minOccurs="0" />
+                <xs:element name="Geburtsort" type="xs:string" minOccurs="0" />
+                <xs:element name="Bogennummer" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil1_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil2_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil3_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil4_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="BewertSchriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil1_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil2_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil3_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil4_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil5_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="BewertMuendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Gesamtergebnis_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Gesamtergebnis_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Gesamtergebnis" type="xs:string" minOccurs="0" />
+                <xs:element name="Note" type="xs:string" minOccurs="0" />
+                <xs:element name="Geburtsdatum" type="xs:string" minOccurs="0" />
+                <xs:element name="Pruefungsdatum" type="xs:dateTime" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Table><Stapel>0</Stapel><Name> DANESHMANDİ</Name><Vorname>ANOUSHKA</Vorname><Geburtsort>SOLINGEN</Geburtsort><Bogennummer>D170304</Bogennummer><Teil1_schriftlich>36</Teil1_schriftlich><Teil2_schriftlich>19</Teil2_schriftlich><Teil3_schriftlich>27</Teil3_schriftlich><Teil4_schriftlich>32</Teil4_schriftlich><BewertSchriftlich></BewertSchriftlich><Teil1_muendlich>6</Teil1_muendlich><Teil2_muendlich>4</Teil2_muendlich><Teil3_muendlich>6</Teil3_muendlich><Teil4_muendlich>32</Teil4_muendlich><Teil5_muendlich>0.00</Teil5_muendlich><BewertMuendlich></BewertMuendlich><Gesamtergebnis_schriftlich>114</Gesamtergebnis_schriftlich><Gesamtergebnis_muendlich>48</Gesamtergebnis_muendlich><Gesamtergebnis>162</Gesamtergebnis><Note>3</Note><Geburtsdatum>1971-04-25 00:00:00</Geburtsdatum><Pruefungsdatum>2024-10-02T07:00:00+00:00</Pruefungsdatum></Table><Table><Stapel>0</Stapel><Name>EKTAŞ</Name><Vorname>GÜLÜZAR</Vorname><Geburtsort>KONYA KULU</Geburtsort><Bogennummer>D170297</Bogennummer><Teil1_schriftlich>20</Teil1_schriftlich><Teil2_schriftlich>16</Teil2_schriftlich><Teil3_schriftlich>20</Teil3_schriftlich><Teil4_schriftlich>16</Teil4_schriftlich><BewertSchriftlich></BewertSchriftlich><Teil1_muendlich>2</Teil1_muendlich><Teil2_muendlich>1</Teil2_muendlich><Teil3_muendlich>4</Teil3_muendlich><Teil4_muendlich>11</Teil4_muendlich><Teil5_muendlich>0.00</Teil5_muendlich><BewertMuendlich></BewertMuendlich><Gesamtergebnis_schriftlich>72</Gesamtergebnis_schriftlich><Gesamtergebnis_muendlich>18</Gesamtergebnis_muendlich><Gesamtergebnis>90</Gesamtergebnis><Note>F</Note><Geburtsdatum>1979-05-19 00:00:00</Geburtsdatum><Pruefungsdatum>2024-10-02T07:00:00+00:00</Pruefungsdatum></Table><Table><Stapel>0</Stapel><Name>KARADAŞ</Name><Vorname>DİLEK</Vorname><Geburtsort>ŞANLIURFA</Geburtsort><Bogennummer>D170305</Bogennummer><Teil1_schriftlich>32</Teil1_schriftlich><Teil2_schriftlich>9</Teil2_schriftlich><Teil3_schriftlich>23</Teil3_schriftlich><Teil4_schriftlich>20</Teil4_schriftlich><BewertSchriftlich></BewertSchriftlich><Teil1_muendlich>4</Teil1_muendlich><Teil2_muendlich>4</Teil2_muendlich><Teil3_muendlich>6</Teil3_muendlich><Teil4_muendlich>29</Teil4_muendlich><Teil5_muendlich>0.00</Teil5_muendlich><BewertMuendlich></BewertMuendlich><Gesamtergebnis_schriftlich>84</Gesamtergebnis_schriftlich><Gesamtergebnis_muendlich>43</Gesamtergebnis_muendlich><Gesamtergebnis>127</Gesamtergebnis><Note>F</Note><Geburtsdatum>1997-04-18 00:00:00</Geburtsdatum><Pruefungsdatum>2024-10-02T07:00:00+00:00</Pruefungsdatum></Table>
+</NewDataSet>

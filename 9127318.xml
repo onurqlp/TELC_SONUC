@@ -1,0 +1,40 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:Locale="de-DE">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Stapel" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="Vorname" type="xs:string" minOccurs="0" />
+                <xs:element name="Geburtsort" type="xs:string" minOccurs="0" />
+                <xs:element name="Bogennummer" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil1_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil2_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil3_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil4_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="BewertSchriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil1_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil2_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil3_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil4_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil5_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="BewertMuendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Gesamtergebnis_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Gesamtergebnis_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Gesamtergebnis" type="xs:string" minOccurs="0" />
+                <xs:element name="Note" type="xs:string" minOccurs="0" />
+                <xs:element name="Geburtsdatum" type="xs:string" minOccurs="0" />
+                <xs:element name="Pruefungsdatum" type="xs:dateTime" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Table><Stapel>0</Stapel><Name>ARUSOĞLU</Name><Vorname>GÜLCAN </Vorname><Geburtsort>KIRKLARELİ</Geburtsort><Bogennummer>D166865</Bogennummer><Teil1_schriftlich>45</Teil1_schriftlich><Teil2_schriftlich>24</Teil2_schriftlich><Teil3_schriftlich>50</Teil3_schriftlich><Teil4_schriftlich>9</Teil4_schriftlich><BewertSchriftlich></BewertSchriftlich><Teil1_muendlich>25</Teil1_muendlich><Teil2_muendlich>23</Teil2_muendlich><Teil3_muendlich>25</Teil3_muendlich><Teil4_muendlich>0.00</Teil4_muendlich><Teil5_muendlich>0.00</Teil5_muendlich><BewertMuendlich></BewertMuendlich><Gesamtergebnis_schriftlich>128</Gesamtergebnis_schriftlich><Gesamtergebnis_muendlich>73</Gesamtergebnis_muendlich><Gesamtergebnis>201</Gesamtergebnis><Note>F</Note><Geburtsdatum>1972-04-18 00:00:00</Geburtsdatum><Pruefungsdatum>2024-09-10T08:00:00+00:00</Pruefungsdatum></Table><Table><Stapel>0</Stapel><Name>SEREN</Name><Vorname>ERDAL </Vorname><Geburtsort>ANKARA</Geburtsort><Bogennummer>D166864</Bogennummer><Teil1_schriftlich>40</Teil1_schriftlich><Teil2_schriftlich>18</Teil2_schriftlich><Teil3_schriftlich>42.5</Teil3_schriftlich><Teil4_schriftlich>27</Teil4_schriftlich><BewertSchriftlich></BewertSchriftlich><Teil1_muendlich>23</Teil1_muendlich><Teil2_muendlich>17</Teil2_muendlich><Teil3_muendlich>17</Teil3_muendlich><Teil4_muendlich>0.00</Teil4_muendlich><Teil5_muendlich>0.00</Teil5_muendlich><BewertMuendlich></BewertMuendlich><Gesamtergebnis_schriftlich>127.5</Gesamtergebnis_schriftlich><Gesamtergebnis_muendlich>57</Gesamtergebnis_muendlich><Gesamtergebnis>184.5</Gesamtergebnis><Note>F</Note><Geburtsdatum>1969-02-06 00:00:00</Geburtsdatum><Pruefungsdatum>2024-09-10T08:00:00+00:00</Pruefungsdatum></Table><Table><Stapel>0</Stapel><Name>İMREK</Name><Vorname>AHMET KEREM </Vorname><Geburtsort>HATAY</Geburtsort><Bogennummer>D166866</Bogennummer><Teil1_schriftlich>22.5</Teil1_schriftlich><Teil2_schriftlich>6</Teil2_schriftlich><Teil3_schriftlich>50</Teil3_schriftlich><Teil4_schriftlich>9</Teil4_schriftlich><BewertSchriftlich></BewertSchriftlich><Teil1_muendlich>17</Teil1_muendlich><Teil2_muendlich>15</Teil2_muendlich><Teil3_muendlich>17</Teil3_muendlich><Teil4_muendlich>0.00</Teil4_muendlich><Teil5_muendlich>0.00</Teil5_muendlich><BewertMuendlich></BewertMuendlich><Gesamtergebnis_schriftlich>87.5</Gesamtergebnis_schriftlich><Gesamtergebnis_muendlich>49</Gesamtergebnis_muendlich><Gesamtergebnis>136.5</Gesamtergebnis><Note>F</Note><Geburtsdatum>1989-11-20 00:00:00</Geburtsdatum><Pruefungsdatum>2024-09-10T08:00:00+00:00</Pruefungsdatum></Table>
+</NewDataSet>

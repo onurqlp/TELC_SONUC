@@ -1,0 +1,40 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:Locale="de-DE">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Stapel" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="Vorname" type="xs:string" minOccurs="0" />
+                <xs:element name="Geburtsort" type="xs:string" minOccurs="0" />
+                <xs:element name="Bogennummer" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil1_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil2_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil3_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil4_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="BewertSchriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil1_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil2_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil3_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil4_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil5_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="BewertMuendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Gesamtergebnis_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Gesamtergebnis_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Gesamtergebnis" type="xs:string" minOccurs="0" />
+                <xs:element name="Note" type="xs:string" minOccurs="0" />
+                <xs:element name="Geburtsdatum" type="xs:string" minOccurs="0" />
+                <xs:element name="Pruefungsdatum" type="xs:dateTime" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Table><Stapel>0</Stapel><Name>DEMİR</Name><Vorname>MUHAMMED EMİN </Vorname><Geburtsort>ÜSKÜDAR</Geburtsort><Bogennummer>D160399</Bogennummer><Teil1_schriftlich>45</Teil1_schriftlich><Teil2_schriftlich>13.5</Teil2_schriftlich><Teil3_schriftlich>40</Teil3_schriftlich><Teil4_schriftlich>15</Teil4_schriftlich><BewertSchriftlich></BewertSchriftlich><Teil1_muendlich>13</Teil1_muendlich><Teil2_muendlich>22</Teil2_muendlich><Teil3_muendlich>22</Teil3_muendlich><Teil4_muendlich>0.00</Teil4_muendlich><Teil5_muendlich>0.00</Teil5_muendlich><BewertMuendlich></BewertMuendlich><Gesamtergebnis_schriftlich>113.5</Gesamtergebnis_schriftlich><Gesamtergebnis_muendlich>57</Gesamtergebnis_muendlich><Gesamtergebnis>170.5</Gesamtergebnis><Note>F</Note><Geburtsdatum>2005-08-29 00:00:00</Geburtsdatum><Pruefungsdatum>2024-07-23T07:00:00+00:00</Pruefungsdatum></Table><Table><Stapel>0</Stapel><Name>ELMAS</Name><Vorname>SAMET CAN</Vorname><Geburtsort>ALTINYAYLA</Geburtsort><Bogennummer>D160400</Bogennummer><Teil1_schriftlich>20</Teil1_schriftlich><Teil2_schriftlich>10.5</Teil2_schriftlich><Teil3_schriftlich>25</Teil3_schriftlich><Teil4_schriftlich>39</Teil4_schriftlich><BewertSchriftlich></BewertSchriftlich><Teil1_muendlich>14</Teil1_muendlich><Teil2_muendlich>24</Teil2_muendlich><Teil3_muendlich>20</Teil3_muendlich><Teil4_muendlich>0.00</Teil4_muendlich><Teil5_muendlich>0.00</Teil5_muendlich><BewertMuendlich></BewertMuendlich><Gesamtergebnis_schriftlich>94.5</Gesamtergebnis_schriftlich><Gesamtergebnis_muendlich>58</Gesamtergebnis_muendlich><Gesamtergebnis>152.5</Gesamtergebnis><Note>F</Note><Geburtsdatum>2000-03-17 00:00:00</Geburtsdatum><Pruefungsdatum>2024-07-23T07:00:00+00:00</Pruefungsdatum></Table><Table><Stapel>0</Stapel><Name>HİÇYILMAZ</Name><Vorname>OSMAN</Vorname><Geburtsort>PAZAR</Geburtsort><Bogennummer>D160401</Bogennummer><Teil1_schriftlich>65</Teil1_schriftlich><Teil2_schriftlich>22.5</Teil2_schriftlich><Teil3_schriftlich>62.5</Teil3_schriftlich><Teil4_schriftlich>33</Teil4_schriftlich><BewertSchriftlich></BewertSchriftlich><Teil1_muendlich>14</Teil1_muendlich><Teil2_muendlich>20</Teil2_muendlich><Teil3_muendlich>18</Teil3_muendlich><Teil4_muendlich>0.00</Teil4_muendlich><Teil5_muendlich>0.00</Teil5_muendlich><BewertMuendlich></BewertMuendlich><Gesamtergebnis_schriftlich>183</Gesamtergebnis_schriftlich><Gesamtergebnis_muendlich>52</Gesamtergebnis_muendlich><Gesamtergebnis>235</Gesamtergebnis><Note>3</Note><Geburtsdatum>1990-11-27 00:00:00</Geburtsdatum><Pruefungsdatum>2024-07-23T07:00:00+00:00</Pruefungsdatum></Table><Table><Stapel>0</Stapel><Name>DEĞİRMENCİOĞLU</Name><Vorname>KARDELEN</Vorname><Geburtsort>MERZİFON</Geburtsort><Bogennummer>D160402</Bogennummer><Teil1_schriftlich></Teil1_schriftlich><Teil2_schriftlich></Teil2_schriftlich><Teil3_schriftlich></Teil3_schriftlich><Teil4_schriftlich></Teil4_schriftlich><BewertSchriftlich></BewertSchriftlich><Teil1_muendlich></Teil1_muendlich><Teil2_muendlich></Teil2_muendlich><Teil3_muendlich></Teil3_muendlich><Teil4_muendlich></Teil4_muendlich><Teil5_muendlich></Teil5_muendlich><BewertMuendlich></BewertMuendlich><Gesamtergebnis_schriftlich></Gesamtergebnis_schriftlich><Gesamtergebnis_muendlich></Gesamtergebnis_muendlich><Gesamtergebnis></Gesamtergebnis><Note></Note><Geburtsdatum>2001-07-18 00:00:00</Geburtsdatum><Pruefungsdatum>2024-07-23T07:00:00+00:00</Pruefungsdatum></Table>
+</NewDataSet>

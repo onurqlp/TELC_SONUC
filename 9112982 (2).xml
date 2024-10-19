@@ -1,0 +1,40 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:Locale="de-DE">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Stapel" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="Vorname" type="xs:string" minOccurs="0" />
+                <xs:element name="Geburtsort" type="xs:string" minOccurs="0" />
+                <xs:element name="Bogennummer" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil1_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil2_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil3_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil4_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="BewertSchriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil1_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil2_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil3_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil4_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Teil5_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="BewertMuendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Gesamtergebnis_schriftlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Gesamtergebnis_muendlich" type="xs:string" minOccurs="0" />
+                <xs:element name="Gesamtergebnis" type="xs:string" minOccurs="0" />
+                <xs:element name="Note" type="xs:string" minOccurs="0" />
+                <xs:element name="Geburtsdatum" type="xs:string" minOccurs="0" />
+                <xs:element name="Pruefungsdatum" type="xs:dateTime" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Table><Stapel>0</Stapel><Name>ÜNSAL</Name><Vorname>ERSİN</Vorname><Geburtsort>HANİ</Geburtsort><Bogennummer>D145613</Bogennummer><Teil1_schriftlich>55</Teil1_schriftlich><Teil2_schriftlich>24</Teil2_schriftlich><Teil3_schriftlich>57.5</Teil3_schriftlich><Teil4_schriftlich>27</Teil4_schriftlich><BewertSchriftlich></BewertSchriftlich><Teil1_muendlich>19</Teil1_muendlich><Teil2_muendlich>15</Teil2_muendlich><Teil3_muendlich>15</Teil3_muendlich><Teil4_muendlich>0.00</Teil4_muendlich><Teil5_muendlich>0.00</Teil5_muendlich><BewertMuendlich></BewertMuendlich><Gesamtergebnis_schriftlich>163.5</Gesamtergebnis_schriftlich><Gesamtergebnis_muendlich>49</Gesamtergebnis_muendlich><Gesamtergebnis>212.5</Gesamtergebnis><Note>3</Note><Geburtsdatum>1989-08-06 00:00:00</Geburtsdatum><Pruefungsdatum>2024-05-09T07:00:00+00:00</Pruefungsdatum></Table><Table><Stapel>0</Stapel><Name>AKKAYA</Name><Vorname>YEŞİM</Vorname><Geburtsort>HATAY</Geburtsort><Bogennummer>D145611</Bogennummer><Teil1_schriftlich>50</Teil1_schriftlich><Teil2_schriftlich>18</Teil2_schriftlich><Teil3_schriftlich>47.5</Teil3_schriftlich><Teil4_schriftlich>21</Teil4_schriftlich><BewertSchriftlich></BewertSchriftlich><Teil1_muendlich>19</Teil1_muendlich><Teil2_muendlich>14</Teil2_muendlich><Teil3_muendlich>13</Teil3_muendlich><Teil4_muendlich>0.00</Teil4_muendlich><Teil5_muendlich>0.00</Teil5_muendlich><BewertMuendlich></BewertMuendlich><Gesamtergebnis_schriftlich>136.5</Gesamtergebnis_schriftlich><Gesamtergebnis_muendlich>46</Gesamtergebnis_muendlich><Gesamtergebnis>182.5</Gesamtergebnis><Note>4</Note><Geburtsdatum>1994-05-30 00:00:00</Geburtsdatum><Pruefungsdatum>2024-05-09T07:00:00+00:00</Pruefungsdatum></Table><Table><Stapel>0</Stapel><Name>AYGÜN</Name><Vorname>HELİN BEREN</Vorname><Geburtsort>KONAK</Geburtsort><Bogennummer>D145612</Bogennummer><Teil1_schriftlich>52.5</Teil1_schriftlich><Teil2_schriftlich>22.5</Teil2_schriftlich><Teil3_schriftlich>62.5</Teil3_schriftlich><Teil4_schriftlich>27</Teil4_schriftlich><BewertSchriftlich></BewertSchriftlich><Teil1_muendlich>21</Teil1_muendlich><Teil2_muendlich>19</Teil2_muendlich><Teil3_muendlich>19</Teil3_muendlich><Teil4_muendlich>0.00</Teil4_muendlich><Teil5_muendlich>0.00</Teil5_muendlich><BewertMuendlich></BewertMuendlich><Gesamtergebnis_schriftlich>164.5</Gesamtergebnis_schriftlich><Gesamtergebnis_muendlich>59</Gesamtergebnis_muendlich><Gesamtergebnis>223.5</Gesamtergebnis><Note>3</Note><Geburtsdatum>2005-03-08 00:00:00</Geburtsdatum><Pruefungsdatum>2024-05-09T07:00:00+00:00</Pruefungsdatum></Table>
+</NewDataSet>
