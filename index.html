@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XML Sınav Sonuçları Yükleme ve Görüntüleme</title>
+    <title>XML Sınav Sonuçları Görüntüleme</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -49,7 +49,7 @@
             h1, h2 {
                 font-size: 1.2em;
             }
-            input[type="file"], select {
+            select {
                 width: 100%;
             }
             .copy-button {
@@ -60,9 +60,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>XML Dosyası Yükle ve Sınav Sonuçlarını Görüntüle</h1>
-        <input type="file" id="fileInput" accept=".xml" multiple>
-        <h2>Sınav Tarihini Seçin</h2>
+        <h1>Sınav Tarihini Seçin ve Sonuçları Görüntüleyin</h1>
         <select id="dateSelect">
             <option value="">Bir sınav tarihi seçin</option>
         </select>
@@ -104,94 +102,112 @@
     </div>
 
     <script>
-        const examData = {};
-        document.getElementById('fileInput').addEventListener('change', function(event) {
-            const files = event.target.files;
-            for (let file of files) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const parser = new DOMParser();
-                    const xmlDoc = parser.parseFromString(e.target.result, "application/xml");
-                    const tables = xmlDoc.getElementsByTagName("Table");
+        const baseUrl = 'https://raw.githubusercontent.com/KULLANICI_ADI/REPO_ADI/main/xml/';
 
-                    // Extract exam date
-                    const examDate = xmlDoc.getElementsByTagName("Pruefungsdatum")[0]?.textContent || "-";
-                    if (examDate !== "-") {
-                        if (!examData[examDate]) {
-                            examData[examDate] = [];
-                            const option = document.createElement("option");
-                            option.value = examDate;
-                            const date = new Date(examDate);
-                            option.textContent = `${date.getDate()} ${date.toLocaleString('tr-TR', { month: 'long' })} ${date.getFullYear()}`;
-                            document.getElementById("dateSelect").appendChild(option);
-                        }
-                        examData[examDate].push(tables);
+        // GitHub'daki XML dosyalarının bulunduğu repository URL'si ile dosyaları listeleme
+        fetch('https://api.github.com/repos/KULLANICI_ADI/REPO_ADI/contents/xml')
+            .then(response => response.json())
+            .then(data => {
+                const select = document.getElementById('dateSelect');
+                data.forEach(item => {
+                    if (item.name.endsWith('.xml')) {
+                        fetch(baseUrl + item.name)
+                            .then(response => response.text())
+                            .then(str => {
+                                const parser = new DOMParser();
+                                const xmlDoc = parser.parseFromString(str, "application/xml");
+
+                                // XML dosyasından sınav tarihini al
+                                const examDate = xmlDoc.getElementsByTagName("Pruefungsdatum")[0]?.textContent || "-";
+                                if (examDate !== "-") {
+                                    const date = new Date(examDate);
+                                    const formattedDate = `${date.getDate()} ${date.toLocaleString('tr-TR', { month: 'long' })} ${date.getFullYear()}`;
+
+                                    // Tarihi dropdown'a ekle
+                                    const option = document.createElement('option');
+                                    option.value = item.name; // Dosya adını value olarak saklıyoruz
+                                    option.textContent = formattedDate;
+                                    select.appendChild(option);
+                                }
+                            })
+                            .catch(error => console.error('Dosya işlenirken hata oluştu:', error));
                     }
-                };
-                reader.readAsText(file);
-            }
-        });
+                });
+            })
+            .catch(error => console.error('Dosyaları getirirken hata oluştu:', error));
 
         document.getElementById('dateSelect').addEventListener('change', function(event) {
-            const selectedDate = event.target.value;
-            if (selectedDate && examData[selectedDate]) {
-                const resultTableBody = document.querySelector("#resultTable tbody");
-                const shortListTableBody = document.querySelector("#shortListTable tbody");
-                resultTableBody.innerHTML = ""; // Clear previous content
-                shortListTableBody.innerHTML = "";
+            const fileName = this.value;
+            if (fileName) {
+                fetch(baseUrl + fileName)
+                    .then(response => response.text())
+                    .then(str => {
+                        const parser = new DOMParser();
+                        const xmlDoc = parser.parseFromString(str, "application/xml");
+                        const tables = xmlDoc.getElementsByTagName("Table");
 
-                const date = new Date(selectedDate);
-                const formattedDate = `${date.getDate()} ${date.toLocaleString('tr-TR', { month: 'long' })} ${date.getFullYear()}`;
-                document.getElementById("examTitle").textContent = `${formattedDate.toUpperCase()} TARİHİNDEKİ SINAV SONUÇLARI`;
+                        const resultTableBody = document.querySelector("#resultTable tbody");
+                        const shortListTableBody = document.querySelector("#shortListTable tbody");
+                        resultTableBody.innerHTML = ""; // Clear previous content
+                        shortListTableBody.innerHTML = "";
 
-                for (let tables of examData[selectedDate]) {
-                    for (let i = 0; i < tables.length; i++) {
-                        const row = document.createElement("tr");
-                        const columns = [
-                            "Vorname", "Name", "Bogennummer", "Teil1_schriftlich", "Teil2_schriftlich", "Teil3_schriftlich", "Teil4_schriftlich",
-                            "Teil1_muendlich", "Teil2_muendlich", "Teil3_muendlich", "Gesamtergebnis_schriftlich", "Gesamtergebnis_muendlich", "Gesamtergebnis"
-                        ];
-                        columns.forEach(col => {
-                            const cell = document.createElement("td");
-                            const value = tables[i].getElementsByTagName(col)[0]?.textContent || "-";
-                            cell.textContent = value;
-                            row.appendChild(cell);
-                        });
-                        resultTableBody.appendChild(row);
+                        // Başlık güncelleme
+                        const examDate = xmlDoc.getElementsByTagName("Pruefungsdatum")[0]?.textContent || "-";
+                        if (examDate !== "-") {
+                            const date = new Date(examDate);
+                            const formattedDate = `${date.getDate()} ${date.toLocaleString('tr-TR', { month: 'long' })} ${date.getFullYear()}`;
+                            document.getElementById("examTitle").textContent = `${formattedDate.toUpperCase()} TARİHİNDEKİ SINAV SONUÇLARI`;
+                        }
 
-                        // Adding to short list table
-                        const shortRow = document.createElement("tr");
-                        const shortColumns = [
-                            "Vorname", "Name", "Gesamtergebnis_schriftlich", "Gesamtergebnis_muendlich"
-                        ];
-                        shortColumns.forEach(col => {
-                            const cell = document.createElement("td");
-                            const value = tables[i].getElementsByTagName(col)[0]?.textContent || "-";
-                            cell.textContent = value;
-                            shortRow.appendChild(cell);
-                        });
-
-                        // Adding copy button
-                        const copyCell = document.createElement("td");
-                        const copyButton = document.createElement("button");
-                        copyButton.textContent = "Mesajı Kopyala";
-                        copyButton.className = "copy-button";
-                        copyButton.addEventListener("click", () => {
-                            const vorname = tables[i].getElementsByTagName("Vorname")[0]?.textContent || "";
-                            const name = tables[i].getElementsByTagName("Name")[0]?.textContent || "";
-                            const schriftlich = tables[i].getElementsByTagName("Gesamtergebnis_schriftlich")[0]?.textContent || "";
-                            const muendlich = tables[i].getElementsByTagName("Gesamtergebnis_muendlich")[0]?.textContent || "";
-                            const message = `Sayın ${vorname} ${name},\n\nKurumumuzda girdiğiniz sınav sonucunuz Telc tarafından kurumumuza iletildi.\n\nYazılı Bölüm (Schriftlicher Teil): ${schriftlich} Puan (Min. 135 / 225)\nSözlü Bölüm (Mündlischer Teil): ${muendlich} Puan (Min. 45 / 75)\n\nDetaylı bilgi için kurumumuzla iletişime geçebilirsiniz.`;
-                            navigator.clipboard.writeText(message).then(() => {
-                                alert("Mesaj kopyalandı!");
+                        // Sonuçları tabloya ekleme
+                        for (let i = 0; i < tables.length; i++) {
+                            const row = document.createElement("tr");
+                            const columns = [
+                                "Vorname", "Name", "Bogennummer", "Teil1_schriftlich", "Teil2_schriftlich", "Teil3_schriftlich", "Teil4_schriftlich",
+                                "Teil1_muendlich", "Teil2_muendlich", "Teil3_muendlich", "Gesamtergebnis_schriftlich", "Gesamtergebnis_muendlich", "Gesamtergebnis"
+                            ];
+                            columns.forEach(col => {
+                                const cell = document.createElement("td");
+                                const value = tables[i].getElementsByTagName(col)[0]?.textContent || "-";
+                                cell.textContent = value;
+                                row.appendChild(cell);
                             });
-                        });
-                        copyCell.appendChild(copyButton);
-                        shortRow.appendChild(copyCell);
+                            resultTableBody.appendChild(row);
 
-                        shortListTableBody.appendChild(shortRow);
-                    }
-                }
+                            // Kısa listeye ekleme
+                            const shortRow = document.createElement("tr");
+                            const shortColumns = [
+                                "Vorname", "Name", "Gesamtergebnis_schriftlich", "Gesamtergebnis_muendlich"
+                            ];
+                            shortColumns.forEach(col => {
+                                const cell = document.createElement("td");
+                                const value = tables[i].getElementsByTagName(col)[0]?.textContent || "-";
+                                cell.textContent = value;
+                                shortRow.appendChild(cell);
+                            });
+
+                            // Mesaj kopyala butonu ekleme
+                            const copyCell = document.createElement("td");
+                            const copyButton = document.createElement("button");
+                            copyButton.textContent = "Mesajı Kopyala";
+                            copyButton.className = "copy-button";
+                            copyButton.addEventListener("click", () => {
+                                const vorname = tables[i].getElementsByTagName("Vorname")[0]?.textContent || "";
+                                const name = tables[i].getElementsByTagName("Name")[0]?.textContent || "";
+                                const schriftlich = tables[i].getElementsByTagName("Gesamtergebnis_schriftlich")[0]?.textContent || "";
+                                const muendlich = tables[i].getElementsByTagName("Gesamtergebnis_muendlich")[0]?.textContent || "";
+                                const message = `Sayın ${vorname} ${name},\n\nKurumumuzda girdiğiniz sınav sonucunuz Telc tarafından kurumumuza iletildi.\n\nYazılı Bölüm (Schriftlicher Teil): ${schriftlich} Puan (Min. 135 / 225)\nSözlü Bölüm (Mündlischer Teil): ${muendlich} Puan (Min. 45 / 75)\n\nDetaylı bilgi için kurumumuzla iletişime geçebilirsiniz.`;
+                                navigator.clipboard.writeText(message).then(() => {
+                                    alert("Mesaj kopyalandı!");
+                                });
+                            });
+                            copyCell.appendChild(copyButton);
+                            shortRow.appendChild(copyCell);
+
+                            shortListTableBody.appendChild(shortRow);
+                        }
+                    })
+                    .catch(error => console.error('Dosya yüklenirken hata oluştu:', error));
             }
         });
     </script>
